@@ -347,3 +347,14 @@ function instalarApp() {
         deferredPrompt.prompt();
     }
 }
+window.addEventListener('load', () => {
+    const loader = document.getElementById('loading-screen');
+    
+    // Pequeno atraso para garantir que tudo renderizou bem
+    setTimeout(() => {
+        loader.style.opacity = '0';
+        setTimeout(() => {
+            loader.style.display = 'none';
+        }, 500); // Tempo da transição de opacidade
+    }, 1500); // 1.5 segundos de splash screen
+});
